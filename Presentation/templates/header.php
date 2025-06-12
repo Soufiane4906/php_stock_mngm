@@ -20,14 +20,25 @@ require_once("../../Metier/approvisionnement.php");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?=$title?> - Mini-Projet</title>
 
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Core CSS -->
     <link rel="stylesheet" href="../../assets/css/main/app.css">
     <link rel="stylesheet" href="../../assets/css/main/app-dark.css">
+    <link rel="stylesheet" href="../../assets/css/custom.css">
+    
+    <!-- Favicon -->
     <link rel="shortcut icon" href="../../assets/images/logo/favicon.svg" type="image/x-icon">
     <link rel="shortcut icon" href="../../assets/images/logo/favicon.png" type="image/png">
 
+    <!-- Animation Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 
-<body>
+<body class="fade-in">
     <!-- ----------------------------------------------------------------------------------------- -->
     <!--                                          Sidebar                                          -->
     <!-- ----------------------------------------------------------------------------------------- -->
@@ -39,8 +50,11 @@ require_once("../../Metier/approvisionnement.php");
             <div class="sidebar-header position-relative">
                 <div class="d-flex justify-content-between align-items-center">
                     <div class="logo">
-                        <a href="../dashboard.php"><img src="../../assets/images/logo/logo-jell.png" alt="Logo"
-                                srcset="" style="margin-top: 4px;"></a>
+                        <a href="../dashboard.php"><img src="../../assets/images/logo/logo-jell.jpg" alt="Logo"
+                                srcset="" style="margin-top: 4px;
+    width: 115%;
+    height: 164%;
+    border-radius: 39px;"></a>
                     </div>
                     <div class="theme-toggle d-flex gap-2  align-items-center mt-2">
                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"

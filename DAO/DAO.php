@@ -12,13 +12,27 @@ function getPDO(){
         }   
 
         function authentification($login, $password){
-            $pdo = $this->getPDO();
-            $stmt=$pdo->prepare("SELECT * FROM administrateurs WHERE login = ? AND password = ?");
-            $stmt->execute(array($login,$password));
-            if($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-                $_GET=$row;
-                return 1;
-            }else return 0;
+            try {
+                $pdo = $this->getPDO();
+                $stmt = $pdo->prepare("SELECT * FROM administrateurs WHERE login = ?");
+                $stmt->execute(array($login));
+                
+                if($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+                    // Verify password (assuming it's stored as plain text for now)
+                    if($password === $row['password']) {
+                        // Store only necessary information in session
+                        $_SESSION['user_id'] = $row['id'];
+                        $_SESSION['login'] = $row['login'];
+                        $_SESSION['is_logged_in'] = true;
+                        $_SESSION['last_activity'] = time();
+                        return 1;
+                    }
+                }
+                return 0;
+            } catch(PDOException $e) {
+                error_log("Authentication error: " . $e->getMessage());
+                return 0;
+            }
         }
 
         function executeQuery($sql){

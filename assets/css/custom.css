@@ -1,0 +1,194 @@
+/* Modern UI Improvements */
+:root {
+    --primary-color: #435ebe;
+    --secondary-color: #6c757d;
+    --success-color: #198754;
+    --info-color: #0dcaf0;
+    --warning-color: #ffc107;
+    --danger-color: #dc3545;
+    --light-color: #f8f9fa;
+    --dark-color: #212529;
+    --body-bg: #f2f7ff;
+    --sidebar-bg: #ffffff;
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition-speed: 0.3s;
+}
+
+/* Body and General Styles */
+body {
+    background-color: var(--body-bg);
+    font-family: 'Inter', sans-serif;
+    transition: background-color var(--transition-speed);
+}
+
+/* Sidebar Improvements */
+#sidebar {
+    background: var(--sidebar-bg);
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+}
+
+.sidebar-wrapper {
+    border-right: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.sidebar-item {
+    margin: 2px 0;
+    transition: all var(--transition-speed);
+}
+
+.sidebar-link {
+    border-radius: 8px;
+    margin: 0 10px;
+}
+
+.sidebar-link:hover {
+    background-color: var(--primary-color);
+    color: white !important;
+}
+
+/* Card Improvements */
+.card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: var(--card-shadow);
+    transition: transform var(--transition-speed);
+}
+
+.card:hover {
+    transform: translateY(-2px);
+}
+
+.card-header {
+    background: transparent;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 1.5rem;
+}
+
+/* Table Improvements */
+.table {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.table thead th {
+    background-color: rgba(67, 94, 190, 0.05);
+    border-bottom: none;
+    padding: 1rem;
+    font-weight: 600;
+}
+
+.table tbody td {
+    padding: 1rem;
+    vertical-align: middle;
+}
+
+/* Button Improvements */
+.btn {
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+    transition: all var(--transition-speed);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #3449a5;
+    transform: translateY(-1px);
+}
+
+/* Form Controls */
+.form-control {
+    border-radius: 8px;
+    padding: 0.6rem 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    transition: all var(--transition-speed);
+}
+
+.form-control:focus {
+    box-shadow: 0 0 0 3px rgba(67, 94, 190, 0.1);
+    border-color: var(--primary-color);
+}
+
+/* Search Bar */
+.email-fixed-search .form-control {
+    padding-left: 2.5rem;
+    background-color: rgba(67, 94, 190, 0.05);
+    border: none;
+}
+
+/* Modal Improvements */
+.modal-content {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 1.5rem;
+}
+
+.modal-footer {
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 1.5rem;
+}
+
+/* Avatar Improvements */
+.avatar {
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* Dark Mode Improvements */
+[data-bs-theme="dark"] {
+    --body-bg: #151521;
+    --sidebar-bg: #1e1e2d;
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Improvements */
+@media (max-width: 768px) {
+    .sidebar-wrapper {
+        left: -250px;
+    }
+    
+    .sidebar-wrapper.active {
+        left: 0;
+    }
+}
+
+/* Animation Effects */
+.fade-in {
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Loading States */
+.loading {
+    position: relative;
+    overflow: hidden;
+}
+
+.loading::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+} 
