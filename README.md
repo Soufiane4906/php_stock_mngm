@@ -23,6 +23,6 @@ Pour utiliser ce projet, vous aurez besoin de :
 ### password: admin
 
 ---
-Je suis Mohammed El Badry, et je suis heureux de partager ce projet avec vous .
+Je suis Soufiane, et je suis heureux de partager ce projet avec vous .
 
 Merci de votre intérêt pour ce projet !
